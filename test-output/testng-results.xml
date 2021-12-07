@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="3" failed="4" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-12-07T23:19:45 GMT" name="Default suite" finished-at="2021-12-07T23:19:51 GMT" duration-ms="5956">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2021-12-07T23:19:45 GMT" name="Default test" finished-at="2021-12-07T23:19:51 GMT" duration-ms="5956">
+      <class name="com.sbg.runners.TestRunner">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:45 GMT" name="setUpClass" finished-at="2021-12-07T23:19:45 GMT" duration-ms="426" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:45 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:48 GMT" duration-ms="3276" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test Add game in api"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Adding game to API"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:48 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:50 GMT" duration-ms="1163" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test existing game in api negative test"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Adding game to API"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected and actual node values are not matching. expected [[The slug "Test Slug 10" already exists! Cannot add this game...]] but found [[The slug "Test slug 10" already exists! Cannot add this game...]]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected and actual node values are not matching. expected [[The slug "Test Slug 10" already exists! Cannot add this game...]] but found [[The slug "Test slug 10" already exists! Cannot add this game...]]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at com.sbg.stepdefinitions.StepDefinitions.theResponseShouldHaveTheNodeWhoseValueIs(StepDefinitions.java:79)
+at ✽.the response should have the node "errors.message" whose value is "[The slug \"Test Slug 10\" already exists! Cannot add this game...]"(file:///C:/Users/User/sbg-graphql-automation/src/test/resources/features/addgameapi.feature:16)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:50 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:50 GMT" duration-ms="153" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Given I have the base uri"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Adding game to API"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.net.ConnectException">
+            <message>
+              <![CDATA[Connection refused: connect]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.net.ConnectException: Connection refused: connect
+at java.base/sun.nio.ch.Net.connect0(Native Method)
+at java.base/sun.nio.ch.Net.connect(Net.java:576)
+at java.base/sun.nio.ch.Net.connect(Net.java:565)
+at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+at java.base/java.net.Socket.connect(Socket.java:645)
+at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)
+at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+at org.apache.http.client.HttpClient$execute$0.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at org.apache.http.client.HttpClient$execute$0.call(Unknown Source)
+at io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2055)
+at io.restassured.internal.http.HTTPBuilder.doRequest(HTTPBuilder.java:495)
+at io.restassured.internal.http.HTTPBuilder.request(HTTPBuilder.java:452)
+at io.restassured.internal.http.HTTPBuilder$request$3.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)
+at io.restassured.internal.RequestSpecificationImpl.sendHttpRequest(RequestSpecificationImpl.groovy:1451)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1200)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)
+at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at io.restassured.filter.Filter$filter.call(Unknown Source)
+at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+at io.restassured.filter.Filter$filter.call(Unknown Source)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+at io.restassured.filter.FilterContext$next.call(Unknown Source)
+at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1655)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1661)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1029)
+at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:816)
+at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)
+at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+at io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:171)
+at io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy)
+at com.sbg.stepdefinitions.StepDefinitions.iMakeRequestToTheEndPoint(StepDefinitions.java:44)
+at ✽.I make "GET" request to the end point "/graphql"(file:///C:/Users/User/sbg-graphql-automation/src/test/resources/features/addgameapi.feature:20)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.net.ConnectException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:50 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:50 GMT" duration-ms="565" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test get all games api"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To test Games GraphQL api"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:50 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:50 GMT" duration-ms="57" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test get all games api neagative test case"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To test Games GraphQL api"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected and actual node values are not matching. expected [Cannot return null for non-nullable field Game.id.] but found [[Cannot return null for non-nullable field Game.id.]]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected and actual node values are not matching. expected [Cannot return null for non-nullable field Game.id.] but found [[Cannot return null for non-nullable field Game.id.]]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at com.sbg.stepdefinitions.StepDefinitions.theResponseShouldHaveTheNodeWhoseValueIs(StepDefinitions.java:79)
+at ✽.the response should have the node "errors.message" whose value is "Cannot return null for non-nullable field Game.id."(file:///C:/Users/User/sbg-graphql-automation/src/test/resources/features/gamesapi.feature:27)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:50 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:50 GMT" duration-ms="50" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test bad request in api"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To test Games GraphQL api"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:50 GMT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-12-07T23:19:51 GMT" duration-ms="59" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["To test get all games api node values neagative test case"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To test Games GraphQL api"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Expected and actual node values are not matching. expected [5] but found [1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Expected and actual node values are not matching. expected [5] but found [1]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at com.sbg.stepdefinitions.StepDefinitions.theResponseShouldHaveTheNodeWhoseValueIs(StepDefinitions.java:79)
+at ✽.the response should have the node "data.game.id" whose value is "5"(file:///C:/Users/User/sbg-graphql-automation/src/test/resources/features/gamesapi.feature:40)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.sbg.runners.TestRunner@1613674b]" started-at="2021-12-07T23:19:51 GMT" name="tearDownClass" finished-at="2021-12-07T23:19:51 GMT" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.sbg.runners.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
