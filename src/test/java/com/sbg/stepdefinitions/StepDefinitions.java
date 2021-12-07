@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
@@ -32,7 +33,7 @@ public class StepDefinitions {
 
     @And("I have the query parameter with name {string} and value {string}")
     public void iHaveTheQueryParameterWithNameAndValue(String queryParamKey, String queryParamValue) {
-    	
+
         requestSpecification.queryParam(queryParamKey, queryParamValue);
     }
 
@@ -59,41 +60,42 @@ public class StepDefinitions {
 
     @Then("the response status code should be {int}")
     public void theResponseStatusCodeShouldBe(int expectedStatusCode) {
-        ///System.out.println(response.asString());
+        System.out.println(response.asString());
         int actualStatusCode = response.getStatusCode();
-        Assert.assertEquals(actualStatusCode,expectedStatusCode,"Actual and expected status messages are not matching");
+        Assert.assertEquals(actualStatusCode, expectedStatusCode, "Actual and expected status messages are not matching");
     }
 
     @And("the response should have the node {string}")
     public void theResponseShouldHaveTheNode(String nodeJsonPath) {
         Object responseJsonObj = response.jsonPath().get(nodeJsonPath);
-        Assert.assertNotNull(responseJsonObj,"Expected node with path '"+nodeJsonPath+"' doesn't exist.");
+        Assert.assertNotNull(responseJsonObj, "Expected node with path '" + nodeJsonPath + "' doesn't exist.");
     }
 
     @And("the response should have the node {string} whose value is {string}")
     public void theResponseShouldHaveTheNodeWhoseValueIs(String nodeJsonPath, String expectedNodeValue) {
         Object responseJsonObj = response.jsonPath().get(nodeJsonPath);
-        Assert.assertNotNull(responseJsonObj,"Expected node with path '"+nodeJsonPath+"' doesn't exist.");
+        Assert.assertNotNull(responseJsonObj, "Expected node with path '" + nodeJsonPath + "' doesn't exist.");
         String actualNodeValue = responseJsonObj.toString();
-        Assert.assertEquals(actualNodeValue,expectedNodeValue,"Expected and actual node values are not matching.");
+        Assert.assertEquals(actualNodeValue, expectedNodeValue, "Expected and actual node values are not matching.");
     }
-    
+
     @And("the response should have the node {string} whose name is {string}")
     public void the_response_should_have_the_node_whose_name_is(String nodeJsonPath, String expectedNodeName) {
-    	Object responseJsonObj = response.jsonPath().get(nodeJsonPath);
-        Assert.assertNotNull(responseJsonObj,"Expected node with path '"+nodeJsonPath+"' doesn't exist.");
+        Object responseJsonObj = response.jsonPath().get(nodeJsonPath);
+        Assert.assertNotNull(responseJsonObj, "Expected node with path '" + nodeJsonPath + "' doesn't exist.");
         String actualNodeName = responseJsonObj.toString();
-        Assert.assertEquals(actualNodeName,expectedNodeName,"Expected and  node Names are not matching.");
+        Assert.assertEquals(actualNodeName, expectedNodeName, "Expected and  node Names are not matching.");
     }
-      
-    @Then("the response should have the body {string}")
-    public void the_response_should_have_the_body(String expectedMessage) {
-    	String actualMessage = response.asString();
-    	assertTrue(actualMessage.contains(expectedMessage));
+
+    @And("I have add game query with game name value {string} slug value {string} and suplier id value {int}")
+    public void iHaveAddGameQueryWithGameNameValueSlugValueAndSuplierIdValue(String gameName, String gameSlug, int supplierId) {
+        String addGameQuery = String.format(PropertiesUtil.getInstance().getProperty("mutation_add_game"), gameName, gameSlug, supplierId);
+        System.out.println(addGameQuery);
+        requestSpecification.queryParam("query", addGameQuery);
+        requestSpecification.contentType(ContentType.JSON);
+        requestSpecification.body("{}");
     }
-  
-   
-    }
+}
     
   
     
