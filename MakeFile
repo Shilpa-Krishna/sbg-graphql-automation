@@ -1,0 +1,17 @@
+APP_IMAGE=:latest
+APP_RUNNING_PORT=4000
+
+start:
+	docker pull ngr05/sbg-gaming-seit-tech-test
+
+    docker run --name sbg-tech-test-app -p4000:4000 ngr05/sbg-gaming-seit-tech-test 
+
+stop:
+	docker stop sbg-tech-test-app
+	docker rm sbg-tech-test-app
+
+logs:
+	docker logs -f sbg-tech-test-app
+
+test: stop start
+	# Feel free to put your test commands here
